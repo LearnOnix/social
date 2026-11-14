@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reel Drop — Instagram Reel Downloader</title>
+<meta name="description" content="Paste an Instagram Reel link, preview it, download it." />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="orbs"><span></span><span></span><span></span></div>
+
+<main class="shell">
+  <header class="hero">
+    <div class="badge">no login · no watermark</div>
+    <h1>Reel <span class="grad">Drop</span></h1>
+    <p class="sub">Paste an Instagram Reel link. Preview it. Download it.</p>
+  </header>
+
+  <form class="composer" id="form" autocomplete="off">
+    <input id="url" type="text" inputmode="url" spellcheck="false"
+           placeholder="https://www.instagram.com/reel/XXXXXXXXXXX/" />
+    <button type="submit" id="go">Fetch</button>
+  </form>
+  <p class="hint">/reel/ · /reels/ · /p/ · /tv/ — sab chalega</p>
+
+  <section id="status" class="status" hidden></section>
+
+  <section id="card" class="card" hidden>
+    <div class="media">
+      <video id="video" controls playsinline preload="metadata"></video>
+      <img id="thumb" alt="reel cover" hidden />
+    </div>
+
+    <div class="meta">
+      <div class="row">
+        <span class="tag" id="tag">reel</span>
+        <span class="code" id="code"></span>
+      </div>
+      <p id="caption" class="caption"></p>
+
+      <div class="actions">
+        <button id="dlVideo" class="btn primary">Download video</button>
+        <button id="dlThumb" class="btn">Download cover</button>
+        <button id="copy" class="btn ghost">Copy link</button>
+        <a id="open" class="btn ghost" target="_blank" rel="noopener">Open on Instagram</a>
+      </div>
+
+      <p id="note" class="note"></p>
+    </div>
+  </section>
+
+  <footer class="foot">personal use only · hosted on vercel</footer>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
